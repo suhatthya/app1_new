@@ -12,7 +12,7 @@ export function Calculator2() {
 
     return (
         <div style={{textAlign:'center',marginTop:20}}>
-            <span>{}</span>&nbsp;
+            <span>{n1}</span>&nbsp;
             <button onClick={() => calculate('+')}>+</button>&nbsp;
             <button onClick={() => calculate('-')}>-</button>&nbsp;
             <button onClick={() => calculate('*')}>*</button>&nbsp;
