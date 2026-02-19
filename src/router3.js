@@ -1,8 +1,9 @@
-import React from "react";
-import { BrowserRouter, NavLink, Route, Routes } from "react-router-dom";
+import React from 'react'
+import { BrowserRouter, NavLink, Route, Routes } from 'react-router-dom'
 import './navlink.css'
-import Products from "./products";
-import Home from "./home";
+import Products from './products'
+import Home from './home'
+import Member from './member'
 
 export default function Router3() {
     return (
@@ -17,15 +18,16 @@ export default function Router3() {
                 <NavLink to='/products' className={({ isActive }) => isActive ? "active_menu" : "menu"}>
                     Produsts</NavLink> -&nbsp;
                 <NavLink to='/member' className={({ isActive }) => isActive ? "active_menu" : "menu"}>
-                    Memb</NavLink> -&nbsp;
+                    Member</NavLink> -&nbsp;
                 <NavLink to='/contact' className={({ isActive }) => isActive ? "active_menu" : "menu"}>
                     Contact Us</NavLink>
             </nav>
-            <Routes style={{ margin: '20px' }}>
-                <Route path="/" element={<Home/>} />
-                <Route path="/products" element={<Products/>} />
-                <Route path="/member" element={<Member/>} />
-                <Route path="/content" element={<div style={{ textAlign: 'center' }}>Contact Page</div>} />
+
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/products" element={<Products />} />
+                <Route path="/member" Component={Member} />
+                <Route path="/contact" element={<div style={{ textAlign: 'center' }}>Contact Page</div>} />
                 <Route path="/*" element={<div style={{ textAlign: 'center' }}>Error 404 Not Found</div>} />
             </Routes>
         </BrowserRouter>
